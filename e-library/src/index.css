@@ -1,0 +1,124 @@
+.pointer {
+    cursor: pointer;
+}
+
+.book-details-hero{
+  position: relative;
+}
+
+/* gri overlay katmanı */
+.book-details-hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: rgba(0,0,0,0.6);
+  z-index:0;
+}
+
+/* içerik overlay'in üstünde */
+.book-details-hero > .container{
+  position: relative;
+  z-index: 1;
+}
+
+
+#home {
+    background-image: url("https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80");
+    background-size: cover;
+    background-position: center;
+    min-height: 300px;
+    position: relative;
+}
+
+
+#home::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* %50 siyahlık - zevkine göre artırıp azaltabilirsin */
+    z-index: 1;
+}
+
+#home > * {
+    position: relative;
+    z-index: 2; /* İçerideki yazıların karartmanın üstünde kalmasını sağlar */
+}
+
+
+/* Navbar içindeki tüm yazılar beyaz */
+.custom-navbar .navbar-brand,
+.custom-navbar .nav-link,
+.custom-navbar .btn,
+.custom-navbar i {
+  color: #ffffff !important;
+}
+
+/* Hover (aktif OLMAYAN) */
+.custom-navbar .nav-link:not(.active):hover {
+  color: #adb5bd !important;
+  transition: color 0.2s ease;
+}
+
+/* Aktif sayfa */
+.custom-navbar .nav-link.active {
+  color: #f8f9fa !important;
+  font-weight: 600;
+  border-bottom: 2px solid #f8f9fa;
+}
+
+/* Aktif + hover */
+.custom-navbar .nav-link.active:hover {
+  color: #ffffff !important;
+}
+
+/* Toggler */
+.custom-navbar .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.custom-navbar .navbar-toggler-icon {
+  filter: invert(1);
+}
+
+@media (max-width: 991px) {
+  .custom-navbar .navbar-nav .nav-link {
+    padding: 0.75rem 1rem;
+    text-align: center;
+    font-size: 1.1rem;
+  }
+  .custom-navbar form {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+    .custom-navbar .btn {
+    width: 100%;
+    margin-top: 0.5rem;
+    text-align: center;
+  }
+}
+
+
+
+.reader-content {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.reader-content table {
+  width: 100% !important;
+  border-collapse: collapse;
+  margin: 0 !important;
+}
+
+.reader-content td,
+.reader-content th {
+  max-width: 100%;
+  word-break: break-word;
+}
+
+.reader-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
